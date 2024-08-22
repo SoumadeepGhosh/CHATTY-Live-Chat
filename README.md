@@ -4,6 +4,8 @@
 
 ![login page](./images/chatty_login.png)
 
+![Register page](./images/chatty_register.png)
+
 ![home page](./images/chatty.png)
 
 ## Installation Guide
