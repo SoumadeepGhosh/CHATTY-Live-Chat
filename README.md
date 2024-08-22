@@ -17,8 +17,8 @@ Both should be installed and make sure mongodb is running.
 
 #### First Method
 ```shell
-git clone https://github.com/koolkishan/chat-app-react-nodejs
-cd chat-app-react-nodejs
+git clone https://github.com/SoumadeepGhosh/CHATTY-Live-Chat.git
+cd CHATTY-Live-Chat
 ```
 Now rename env files from .env.example to .env
 ```shell
@@ -33,7 +33,7 @@ cd ..
 Now install the dependencies
 ```shell
 cd server
-yarn
+yarn or npm 
 cd ..
 cd public
 yarn
@@ -43,14 +43,14 @@ We are almost done, Now just start the development server.
 For Frontend.
 ```shell
 cd public
-yarn start
+yarn or npm start 
 ```
 For Backend.
 
 Open another terminal in folder, Also make sure mongodb is running in background.
 ```shell
 cd server
-yarn start
+yarn or npm start
 ```
 Done! Now open localhost:3000 in your browser.
 
