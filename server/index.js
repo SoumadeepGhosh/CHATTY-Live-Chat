@@ -6,6 +6,7 @@ const messageRoutes = require("./routes/messages");
 const app = express();
 const socket = require("socket.io");
 require("dotenv").config();
+const path = require('path');
 
 app.use(cors());
 app.use(express.json());
@@ -22,12 +23,29 @@ mongoose
     console.log(err.message);
   });
 
-app.get("/ping", (_req, res) => {
-  return res.json({ msg: "Ping Successful" });
-});
+
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
+
+////////////////////////////Diployment Code /////////////////////////////
+
+
+const __dirname1 = path.resolve();
+if(process.env.Node_ENV  === "production"){
+  app.use(express.static(path.join(__dirname1, "/public/build")));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname1, 'public', 'build', 'index.html'));
+  })
+}else{
+  app.get("/ping", (_req, res) => {
+    return res.json({ msg: "Ping Successful" });
+  });
+}
+
+
+////////////////////////////Diployment Code /////////////////////////////
 
 const server = app.listen(process.env.PORT, () =>
   console.log(`Server started on ${process.env.PORT}`)
