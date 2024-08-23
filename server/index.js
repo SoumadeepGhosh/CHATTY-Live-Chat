@@ -34,7 +34,7 @@ const server = app.listen(process.env.PORT, () =>
 );
 const io = socket(server, {
   cors: {
-    origin: "https://client-swart-phi.vercel.app/",
+    origin: "http://localhost:3000",
     credentials: true,
   },
 });
