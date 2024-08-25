@@ -34,7 +34,7 @@ const server = app.listen(process.env.PORT, () =>
 );
 const io = socket(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin:  "https://mernbackend-4rua.onrender.com",
     credentials: true,
   },
 });
